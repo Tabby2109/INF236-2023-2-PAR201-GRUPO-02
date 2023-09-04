@@ -1,14 +1,14 @@
 # INF236-2023-2-PAR201-GRUPO-02
 > Notar que **X** corresponde al número del grupo asignado.
 
-# Grupo x
+# Grupo 2
 
 Este es el repositorio del *Grupo X*, cuyos integrantes son:
 
-* Integrante 1 - Rol
-* Integrante 2 - Rol
-* Integrante 3 - Rol
-* **Tutor**: Nombre Tutor
+* Nicolás Contreras - 202130555-6
+* Giancarlos Ricci  - Rol
+* Ignacio Jobse - Rol
+* **Tutor**: Alexis Exequiel Henriquez Bugeño
 
 ## Wiki
 
@@ -21,7 +21,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.
 > Reemplazar con los enlaces correspondientes
 
 * [Video presentación cliente](https://www.youtube.com)
-* [Video presentación avance 1](https://www.youtube.com/)
+* [Video presentación avance 1](https://www.youtube.com/watch?v=nlBoEQecQVU)
 * Etc ...
 
 ## Aspectos técnicos relevantes
