@@ -6,7 +6,7 @@
 Este es el repositorio del *Grupo X*, cuyos integrantes son:
 
 * Nicolás Contreras - 202130555-6
-* Giancarlos Ricci  - Rol
+* Giancarlos Ricci  - 202130520-3
 * Ignacio Jobse - 202130547-5
 * **Tutor**: Alexis Exequiel Henriquez Bugeño
 
