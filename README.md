@@ -14,7 +14,7 @@ Este es el repositorio del *Grupo 2*, cuyos integrantes son:
 
 > Obtener enlace desde el home de la wiki del repo.
 
-Puede acceder a la Wiki mediante el siguiente [Home_Wiki]([https://gitlab.inf.utfsm.cl/](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-02/wiki))
+Puede acceder a la Wiki mediante el siguiente [enlace]([https://gitlab.inf.utfsm.cl/](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-02/wiki))
 
 ## Videos
 
