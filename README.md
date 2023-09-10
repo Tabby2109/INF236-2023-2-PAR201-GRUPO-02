@@ -3,7 +3,7 @@
 
 # Grupo 2
 
-Este es el repositorio del *Grupo X*, cuyos integrantes son:
+Este es el repositorio del *Grupo 2*, cuyos integrantes son:
 
 * Nicolás Contreras - 202130555-6
 * Giancarlos Ricci  - 202130520-3
