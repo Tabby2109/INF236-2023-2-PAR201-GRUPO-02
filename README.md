@@ -22,7 +22,7 @@ Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tab
 
 * [Video presentación cliente](https://www.youtube.com)
 * [Video presentación avance 1](https://www.youtube.com/watch?v=nlBoEQecQVU)
-* Etc ...
+* [Video presentación avance 4](https://youtu.be/6CUqDyPI6zc)
 
 ## Aspectos técnicos relevantes
 
