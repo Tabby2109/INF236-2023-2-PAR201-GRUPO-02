@@ -17,4 +17,5 @@ Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tab
 * [Video presentación avance 4](https://youtu.be/6CUqDyPI6zc)
 
 ## Aspectos técnicos relevantes
-dado que el proyecto tiene una cantidad enorme de archivos, subiremos los archivos editados a la carpeta proyecto. Si se desea tener la carpeta completa (con client, server, etc) se adjunta un .zip con todos los archivos.
+en /database/index.js, ud deberá editar la variable "MONGO_URL" con su link de mongodb.
+dado que el proyecto tiene una cantidad enorme de archivos, subiremos los archivos editados a la carpeta [Onedrive](https://usmcl-my.sharepoint.com/:f:/g/personal/nicolas_contrerasj_usm_cl/EobXPDqLXgJPqk54_0WUEHkBUz7CT4Csi3acNj41JOTR5g?e=eTctRU) (debe entrar con correo institucional). En caso de desear ver todos los archivos.
