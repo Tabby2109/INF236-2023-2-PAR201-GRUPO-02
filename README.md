@@ -19,3 +19,5 @@ Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tab
 ## Aspectos técnicos relevantes
 en /database/index.js, ud deberá editar la variable "MONGO_URL" con su link de mongodb.
 dado que el proyecto tiene una cantidad enorme de archivos, subiremos los archivos editados a la carpeta [Onedrive](https://usmcl-my.sharepoint.com/:f:/g/personal/nicolas_contrerasj_usm_cl/EobXPDqLXgJPqk54_0WUEHkBUz7CT4Csi3acNj41JOTR5g?e=eTctRU) (debe entrar con correo institucional). En caso de desear ver todos los archivos.
+
+[archivo comprimido](https://usmcl-my.sharepoint.com/:u:/g/personal/nicolas_contrerasj_usm_cl/Ea0zK7o_5uxMgfz7UorDntIBG0uO5ptvOh-OEW8p9EoWjg?e=HKOAGA)
