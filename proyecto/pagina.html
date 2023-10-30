@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilo para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilo para el contenido del modal */
+        .modal-content {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-height: 80%;
+            overflow-y: auto;
+            width: 80%; /* Ajusta el ancho aquí */
+        }
+
+        .modal-content h2 {
+            font-size: 24px;
+            margin: 0 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .horario-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .arrow-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .dias {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .ventana-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .cerrar-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1><center>Horarios Imagenología</center></h1>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="arrow-button" onclick="mostrarSemana(-1)">&#9664;</button>
+            <h2 id="semana-titulo">Semana 1</h2>
+            <button class="arrow-button" onclick="mostrarSemana(1)">&#9654;</button>
+            <div id="horarios-semana">
+            </div>
+            <button onclick="cerrarModal()" class="horario-button">Cerrar</button>
+        </div>
+    </div>
+
+    <center><button onclick="mostrarModal()" class="horario-button">Mostrar Horarios del mes</button></center>
+
+    <div id="horaReservadaModal" class="ventana-modal" style="display: none; z-index: 9999;">
+        <span onclick="cerrarHoraReservadaModal()" class="cerrar-modal">&times;</span>
+        <p>Hora reservada</p>
+    </div>
+
+    <script>
+        var semanaActual = 1;
+        var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+
+        function mostrarModal() {
+            actualizarSemana(semanaActual);
+            var modal = document.getElementById("modal");
+            modal.style.display = "flex";
+        }
+
+        function cerrarModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        function cerrarHoraReservadaModal() {
+            var horaReservadaModal = document.getElementById("horaReservadaModal");
+            horaReservadaModal.style.display = "none";
+        }
+
+        function mostrarHoraReservada(dia, hora, minuto) {
+            var horaReservadaModal = document.getElementById("horaReservadaModal");
+            var horaReservadaTexto = horaReservadaModal.querySelector("p");
+            horaReservadaTexto.innerText = `Hora reservada para la semana ${semanaActual} el ${dia} a las ${hora}:${minuto < 10 ? '0' + minuto : minuto}`;
+            horaReservadaModal.style.display = "flex";
+        }
+
+        function mostrarSemana(semana) {
+            semanaActual += semana;
+            if (semanaActual < 1) {
+                semanaActual = 1;
+            }
+            if (semanaActual > 4) {
+                semanaActual = 4;
+            }
+            actualizarSemana(semanaActual);
+        }
+
+
+
+
+        function actualizarSemana(semana) {
+            var horariosSemana = document.getElementById("horarios-semana");
+            horariosSemana.innerHTML = '';
+            var tituloSemana = document.getElementById("semana-titulo");
+            tituloSemana.innerText = "Semana " + semana;
+
+            for (var i = 0; i < diasSemana.length; i++) {
+                var dia = diasSemana[i];
+                horariosSemana.innerHTML += `<div class="dias">${dia}</div>`;
+                for (var j = 1; j <= 5; j++) {
+                    (function () {
+                        var horaAleatoria = Math.floor(Math.random() * 24);
+                        var minutoAleatorio = Math.floor(Math.random() * 60);
+                        var button = document.createElement("button");
+                        button.className = "horario-button";
+                        button.innerText = `${horaAleatoria}:${minutoAleatorio < 10 ? '0' + minutoAleatorio : minutoAleatorio}`;
+                        button.onclick = (function(dia, hora, minuto) {
+                            return function() {
+                                mostrarHoraReservada(dia, hora, minuto);
+                            };
+                        })(dia, horaAleatoria, minutoAleatorio);
+                        horariosSemana.appendChild(button);
+                    })();
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>
