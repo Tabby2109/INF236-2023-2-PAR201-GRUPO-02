@@ -26,4 +26,5 @@ Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tab
 
 ## Aspectos técnicos relevantes
 
+dado que el proyecto tiene una cantidad enorme de archivos, subiremos los archivos editados a la carpeta proyecto. Si se desea tener la carpeta completa (con client, server, etc) se adjunta un .zip con todos los archivos.
 _Todo aspecto relevante cuando para poder usar el proyecto o consideraciones del proyecto base a ser entregado_
