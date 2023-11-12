@@ -20,7 +20,19 @@ app.use(express.static(__dirname + "/public"));
 
 // Define una ruta para la página principal
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/pagina.html");
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.get('/paciente.html', (req, res) => {
+  res.sendFile(__dirname + "/paciente.html");
+});
+
+app.get('/administracion.html', (req, res) => {
+  res.sendFile(__dirname + "/administracion.html");
+});
+
+app.get('/medico.html', (req, res) => {
+  res.sendFile(__dirname + "/medico.html");
 });
 
 

@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+</head>
+<body><center>
+
+    <h1>Bienvenido <span id="nombreUsuario"></span></h1>
+
+    <script>
+        // Recuperar el nombre almacenado en el almacenamiento local y mostrarlo
+        const nombreUsuario = localStorage.getItem('nombreUsuario');
+        document.getElementById('nombreUsuario').textContent = nombreUsuario;
+    </script>
+
+</center></body>
+</html>
 <html>
 <head>
     <style>
@@ -155,8 +174,8 @@
                 horariosSemana.innerHTML += `<div class="dias">${dia}</div>`;
                 for (var j = 1; j <= 5; j++) {
                     (function () {
-                        var horaAleatoria = Math.floor(Math.random() * 24);
-                        var minutoAleatorio = Math.floor(Math.random() * 60);
+                        const minutoAleatorio = Math.floor(Math.random() * 7) * 10;
+                        const horaAleatoria = Math.floor(Math.random() * 12) + 8;
                         var button = document.createElement("button");
                         button.className = "horario-button";
                         button.innerText = `${horaAleatoria}:${minutoAleatorio < 10 ? '0' + minutoAleatorio : minutoAleatorio}`;

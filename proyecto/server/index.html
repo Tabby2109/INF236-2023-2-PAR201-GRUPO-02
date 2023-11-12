@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Acceso</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        section {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección de acceso para pacientes -->
+    <section>
+        <h2>Inicio de Sesión - Paciente</h2>
+        <form onsubmit="guardarNombre(event, 'paciente.html')">
+            <label for="usuario_paciente">Usuario:</label>
+            <input type="text" id="usuario_paciente" name="usuario_paciente" required><br>
+            <label for="contrasena_paciente">Contraseña:</label>
+            <input type="password" id="contrasena_paciente" name="contrasena_paciente" required><br>
+            <button type="submit">Acceso Paciente</button>
+        </form>
+    </section>
+
+    <!-- Sección de acceso para administración -->
+    <section>
+        <h2>Inicio de Sesión - Administración</h2>
+        <form onsubmit="guardarNombre(event, 'administracion.html')">
+            <label for="usuario_admin">Usuario:</label>
+            <input type="text" id="usuario_admin" name="usuario_admin" required><br>
+            <label for="contrasena_admin">Contraseña:</label>
+            <input type="password" id="contrasena_admin" name="contrasena_admin" required><br>
+            <button type="submit">Acceso Administración</button>
+        </form>
+    </section>
+
+    <!-- Sección de acceso para médicos -->
+    <section>
+        <h2>Inicio de Sesión - Médico</h2>
+        <form onsubmit="guardarNombre(event, 'medico.html')">
+            <label for="usuario_medico">Usuario:</label>
+            <input type="text" id="usuario_medico" name="usuario_medico" required><br>
+            <label for="contrasena_medico">Contraseña:</label>
+            <input type="password" id="contrasena_medico" name="contrasena_medico" required><br>
+            <button type="submit">Acceso Médico</button>
+        </form>
+    </section>
+
+    <script>
+        function guardarNombre(event, pagina) {
+            event.preventDefault(); // Evitar que el formulario se envíe normalmente
+            const nombreUsuario = document.getElementById('usuario_paciente').value || document.getElementById('usuario_admin').value || document.getElementById('usuario_medico').value;
+            localStorage.setItem('nombreUsuario', nombreUsuario);
+            window.location.href = pagina;
+        }
+    </script>
+
+</body>
+</html>

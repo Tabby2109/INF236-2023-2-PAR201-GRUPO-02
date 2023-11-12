@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+</head>
+<body><center>
+
+    <h1>Bienvenido <span id="nombreUsuario"></span></h1>
+
+    <script>
+        const nombreUsuario = localStorage.getItem('nombreUsuario');
+        document.getElementById('nombreUsuario').textContent = nombreUsuario;
+    </script>
+
+</center></body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+</head>
+<body><center>
+
+    <button onclick="verMiReserva()">Ver mi reserva</button>
+
+    <script>
+        function verMiReserva() {
+            const diasHabiles = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+            const diaAleatorio = diasHabiles[Math.floor(Math.random() * diasHabiles.length)];
+            const horaAleatoria = Math.floor(Math.random() * 12) + 8;
+            const salaAleatoria = Math.floor(Math.random() * 5) + 1;
+
+            alert(`Su reserva es para el día ${diaAleatorio} a las ${horaAleatoria}:00 en la sala ${salaAleatoria}.`);
+        }
+    </script>
+
+</center></body>
+</html>
