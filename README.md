@@ -23,3 +23,5 @@ Se cumplieron todos los comentarios de correcciones del hito 4. (ip 0.0.0.0/0 y 
 Se implementaron las otras 2 HU indicadas en la sección Issues, cumpliendo con su criterio de aceptación.
 Se creo un index para el login de los 3 tipos de usuarios a ingresar.
 Se mejoró el código en general, arreglando botones y calculos innecesarios.
+
+## Conclusiones del proyecto
