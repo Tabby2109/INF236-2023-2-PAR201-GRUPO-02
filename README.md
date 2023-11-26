@@ -25,3 +25,8 @@ Se creo un index para el login de los 3 tipos de usuarios a ingresar.
 Se mejoró el código en general, arreglando botones y calculos innecesarios.
 
 ## Conclusiones del proyecto
+Principalmente, logramos realizar un registro e inicio de sesión independiente para cada uno de los agentes involucrados en las tres historias de usuario. Se pueden registrar usuarios y contraseñas a la base de datos, y solo se puede ingresar a las interfaces independientes solo si las credenciales existen en MongoDB. En cuanto a esto último, consideramos que tuvimos éxito. 
+
+Por otra parte, fracasamos en registrar los horarios de los turnos en la base de datos. Visualmente, tenemos los horarios disponibles o se generan ventanas pop-up con una fecha aleatoria pero estas no son ingresadas o extraidas desde la base.
+
+Finalmente, podemos concluir que aunque no pudimos completar con el último aspecto del proyecto, estamos conformes con el trabajo realizado ya que logramos un sistema de login exitoso para el software de imagenología.
