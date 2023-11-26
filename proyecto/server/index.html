@@ -27,7 +27,7 @@
     <!-- Sección de acceso para pacientes -->
     <section>
         <h2>Inicio de Sesión - Paciente</h2>
-        <form onsubmit="guardarNombre(event, 'paciente.html')">
+        <form onsubmit="verificarCredenciales(event, 'paciente.html', 'paciente')">
             <label for="usuario_paciente">Usuario:</label>
             <input type="text" id="usuario_paciente" name="usuario_paciente" required><br>
             <label for="contrasena_paciente">Contraseña:</label>
@@ -39,11 +39,11 @@
     <!-- Sección de acceso para administración -->
     <section>
         <h2>Inicio de Sesión - Administración</h2>
-        <form onsubmit="guardarNombre(event, 'administracion.html')">
-            <label for="usuario_admin">Usuario:</label>
-            <input type="text" id="usuario_admin" name="usuario_admin" required><br>
-            <label for="contrasena_admin">Contraseña:</label>
-            <input type="password" id="contrasena_admin" name="contrasena_admin" required><br>
+        <form onsubmit="verificarCredenciales(event, 'administracion.html', 'administracion')">
+            <label for="usuario_administracion">Usuario:</label>
+            <input type="text" id="usuario_administracion" name="usuario_administracion" required><br>
+            <label for="contrasena_administracion">Contraseña:</label>
+            <input type="password" id="contrasena_administracion" name="contrasena_administracion" required><br>
             <button type="submit">Acceso Administración</button>
         </form>
     </section>
@@ -51,7 +51,7 @@
     <!-- Sección de acceso para médicos -->
     <section>
         <h2>Inicio de Sesión - Médico</h2>
-        <form onsubmit="guardarNombre(event, 'medico.html')">
+        <form onsubmit="verificarCredenciales(event, 'medico.html', 'medico')">
             <label for="usuario_medico">Usuario:</label>
             <input type="text" id="usuario_medico" name="usuario_medico" required><br>
             <label for="contrasena_medico">Contraseña:</label>
@@ -63,7 +63,7 @@
     <script>
         function guardarNombre(event, pagina) {
             event.preventDefault(); // Evitar que el formulario se envíe normalmente
-            const nombreUsuario = document.getElementById('usuario_paciente').value || document.getElementById('usuario_admin').value || document.getElementById('usuario_medico').value;
+            const nombreUsuario = document.getElementById('usuario_paciente').value || document.getElementById('usuario_administracion').value || document.getElementById('usuario_medico').value;
             localStorage.setItem('nombreUsuario', nombreUsuario);
             window.location.href = pagina;
         }
@@ -71,3 +71,70 @@
 
 </body>
 </html>
+
+
+<script>
+    async function verificarCredenciales(event, pagina, tipo) {
+      event.preventDefault();
+      const usuario = document.getElementById(`usuario_${tipo}`).value;
+      const contrasena = document.getElementById(`contrasena_${tipo}`).value;
+  
+      const response = await fetch('/api/verificar-credenciales', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ usuario, contrasena, tipo })
+      });
+  
+      if (response.ok) {
+        alert('Credenciales válidas. Redireccionando...');
+        localStorage.setItem('nombreUsuario', usuario);
+        window.location.href = pagina;
+      } else {
+        alert('Credenciales inválidas. Inténtalo de nuevo.');
+      }
+    }
+</script>
+
+
+<section>
+    <h2>Crear Nuevo Usuario</h2>
+    <form onsubmit="crearUsuario(event)">
+      <label for="nuevo_usuario">Nuevo Usuario:</label>
+      <input type="text" id="nuevo_usuario" name="nuevo_usuario" required><br>
+      <label for="nueva_contrasena">Nueva Contraseña:</label>
+      <input type="password" id="nueva_contrasena" name="nueva_contrasena" required><br>
+      <label for="tipo_usuario">Tipo de Usuario:</label>
+      <select id="tipo_usuario" name="tipo_usuario" required>
+        <option value="paciente">Paciente</option>
+        <option value="administracion">Administración</option>
+        <option value="medico">Médico</option>
+      </select><br>
+      <button type="submit">Crear Usuario</button>
+    </form>
+</section>
+  
+<script>
+    function crearUsuario(event) {
+      event.preventDefault();
+      const nuevoUsuario = document.getElementById('nuevo_usuario').value;
+      const nuevaContrasena = document.getElementById('nueva_contrasena').value;
+      const tipoUsuario = document.getElementById('tipo_usuario').value;
+  
+      fetch('/api/crear-usuario', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ usuario: nuevoUsuario, contrasena: nuevaContrasena, tipo: tipoUsuario })
+      })
+      .then(response => response.text())
+      .then(message => alert(message))
+      .catch(error => console.error('Error:', error));
+    }
+</script>
+  
+</body>
+</html>
+  
