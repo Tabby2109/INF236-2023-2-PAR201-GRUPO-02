@@ -17,6 +17,7 @@ Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tab
 * [Video presentación avance 4](https://youtu.be/6CUqDyPI6zc)
   - [Contexto avance 4](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-02/wiki/Evidencia-H4)
 * [Video final hito 6 y 7](https://youtu.be/KoXOsCcx_gM)
+  - [Contexto hito 6 y 7 en Wiki](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-02/wiki/Evidencia-H6-y-H7)
 
 ## Aspectos técnicos relevantes
 Hito 5: 
@@ -24,10 +25,3 @@ Se cumplieron todos los comentarios de correcciones del hito 4. (ip 0.0.0.0/0 y 
 Se implementaron las otras 2 HU indicadas en la sección Issues, cumpliendo con su criterio de aceptación.
 Se creo un index para el login de los 3 tipos de usuarios a ingresar.
 Se mejoró el código en general, arreglando botones y calculos innecesarios.
-
-## Conclusiones del proyecto (Hito 6 y 7)
-Principalmente, logramos realizar un registro e inicio de sesión independiente para cada uno de los agentes involucrados en las tres historias de usuario. Se pueden registrar usuarios y contraseñas a la base de datos, y se puede ingresar a las interfaces independientes solo si las credenciales existen en MongoDB. En cuanto a esto último, consideramos que tuvimos éxito.
-
-Por otra parte, fracasamos en registrar los horarios de los turnos en la base de datos. Visualmente, tenemos los horarios disponibles o se generan ventanas pop-up con una fecha aleatoria pero estas no son ingresadas o extraídas desde la base. Esto se debió a que no nos funcionó el tomar datos de horarios de la BD y luego mostrarlos en pantalla. También fracasamos para almacenar horarios en la base de datos, si bien no los almacena en mongoDB, sí lo hace en los archivos, puesto que se generan en index.html y luego se muestran en paciente.html
-
-Finalmente, podemos concluir que aunque no pudimos completar con el último aspecto del proyecto, estamos conformes con el trabajo realizado ya que logramos un sistema de login exitoso para el software de imagenología, paginas individuales para cada persona, entre otros.
