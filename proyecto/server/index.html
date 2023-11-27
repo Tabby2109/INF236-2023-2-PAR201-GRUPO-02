@@ -123,11 +123,48 @@
 
 
 <script>
+
+    function generarHorariosAleatorios() {
+      const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+      const horarios = [];
+
+      for (let i = 0; i < 4; i++) {
+        const dia = diasSemana[Math.floor(Math.random() * diasSemana.length)];
+        const minutos = Math.floor(Math.random() * 7) * 10;
+        const hora = Math.floor(Math.random() * 12) + 8;
+        const sala = Math.floor(Math.random() * 5) + 1;
+
+        const horario = `${dia} en la sala ${sala} a las ${hora}:${minutos}`;
+        horarios.push(horario);
+      }
+
+      return horarios;
+    }
+
+    function mostrarHorarios() {
+      const nombreUsuario = localStorage.getItem('nombreUsuario');
+      const horarios = JSON.parse(localStorage.getItem(`${nombreUsuario}_horarios`));
+
+      if (horarios && horarios.length > 0) {
+        const horariosContainer = document.getElementById('horarios-container');
+        horariosContainer.innerHTML = '<h3>Horarios de Imagenología:</h3>';
+        
+        const ul = document.createElement('ul');
+        horarios.forEach((horario) => {
+          const li = document.createElement('li');
+          li.textContent = horario;
+          ul.appendChild(li);
+        });
+
+        horariosContainer.appendChild(ul);
+      }
+    }
+
     async function verificarCredenciales(event, pagina, tipo) {
       event.preventDefault();
       const usuario = document.getElementById(`usuario_${tipo}`).value;
       const contrasena = document.getElementById(`contrasena_${tipo}`).value;
-  
+
       const response = await fetch('/api/verificar-credenciales', {
         method: 'POST',
         headers: {
@@ -135,10 +172,16 @@
         },
         body: JSON.stringify({ usuario, contrasena, tipo })
       });
-  
+
       if (response.ok) {
         alert('Credenciales válidas. Redireccionando...');
         localStorage.setItem('nombreUsuario', usuario);
+
+        if (tipo === 'paciente') {
+          const horarios = generarHorariosAleatorios();
+          localStorage.setItem(`${usuario}_horarios`, JSON.stringify(horarios));
+        }
+
         window.location.href = pagina;
       } else {
         alert('Credenciales inválidas. Inténtalo de nuevo.');
@@ -148,7 +191,7 @@
 
 
 <script>
-    function crearUsuario(event) {
+     function crearUsuario(event) {
       event.preventDefault();
       const nuevoUsuario = document.getElementById('nuevo_usuario').value;
       const nuevaContrasena = document.getElementById('nueva_contrasena').value;
@@ -166,7 +209,6 @@
       .catch(error => console.error('Error:', error));
     }
 </script>
-  
 </body>
 </html>
   

@@ -53,17 +53,40 @@ app.post('/api/verificar-credenciales', async (req, res) => {
 });
 //add usuario
 
-//inicio reservar horas administracion
-const reservaSchema = new mongoose.Schema({
-  usuario: String,
+//add horario admin
+const horarioSchema = new mongoose.Schema({
   dia: String,
-  hora: Number,
-  minuto: Number
+  hora: String,
+  paciente: String
 });
 
-const Reserva = mongoose.model('Reserva', reservaSchema);
+const Horario = mongoose.model('Horario', horarioSchema);
 
+app.use(express.json());
 
+app.post('/agregarHorario', async (req, res) => {
+  const { dia, hora, paciente } = req.body;
+
+  try {
+      const nuevoHorario = new Horario({ dia, hora, paciente });
+      await nuevoHorario.save();
+      res.status(201).json({ mensaje: 'Horario agregado exitosamente' });
+  } catch (error) {
+      res.status(500).json({ error: 'Error al agregar el horario' });
+  }
+});
+//fin add horario admin
+
+//mostrar horarios admin
+app.get('/obtenerHorarios', async (req, res) => {
+  try {
+      const horarios = await Horario.find();
+      res.json(horarios);
+  } catch (error) {
+      res.status(500).json({ error: 'Error al obtener los horarios' });
+  }
+});
+//fin mostrar horarios admin
 
 
 app.set("port", process.env.PORT || 5000);

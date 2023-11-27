@@ -142,13 +142,6 @@
             horaReservadaModal.style.display = "none";
         }
 
-        function mostrarHoraReservada(dia, hora, minuto) {
-            var horaReservadaModal = document.getElementById("horaReservadaModal");
-            var horaReservadaTexto = horaReservadaModal.querySelector("p");
-            horaReservadaTexto.innerText = `Hora reservada para la semana ${semanaActual} el ${dia} a las ${hora}:${minuto < 10 ? '0' + minuto : minuto}`;
-            horaReservadaModal.style.display = "flex";
-        }
-
         function mostrarSemana(semana) {
             semanaActual += semana;
             if (semanaActual < 1) {
