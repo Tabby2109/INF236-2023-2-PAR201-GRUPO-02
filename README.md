@@ -1,12 +1,20 @@
 # INF236-2023-2-PAR201-GRUPO-02
 # Grupo 2
 
-Este es el repositorio del *Grupo 2*, cuyos integrantes son:
+Este es el repositorio del *Grupo 2* 2023-2 para el proyecto de análisis y diseño de software, cuyos integrantes eran:
 
 * Nicolás Contreras - 202130555-6
 * Giancarlos Ricci  - 202130520-3
 * Ignacio Jobse - 202130547-5
-* **Tutor**: Alexis Exequiel Henriquez Bugeño
+
+Ahora se seguirá usando este proyecto para Ingeniería de software, cuyos integrantes son:
+
+* Nicolás Contreras - 202130555-6
+* Felipe Zapata - 202130515-7
+* Yu Zhou - 202130508-4
+* Belén González - 202130
+
+
 
 ## Wiki
 Puede acceder a la Wiki mediante el siguiente [Home_Wiki](https://github.com/Tabby2109/INF236-2023-2-PAR201-GRUPO-02/wiki)
