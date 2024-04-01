@@ -12,7 +12,7 @@ Ahora se seguirá usando este proyecto para Ingeniería de software, cuyos integ
 * Nicolás Contreras - 202130555-6
 * Felipe Zapata - 202130515-7
 * Yu Zhou - 202130508-4
-* Belén González - 202130
+* Belén González - 202130552-1
 
 
 
